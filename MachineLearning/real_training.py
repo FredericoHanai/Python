@@ -1,8 +1,8 @@
 import numpy as np
-array = np.arange(100).reshape(10,10)
-print (array)
-print("--"*40)
-print(array[3:5,:7])
-print("--"*40)
-lista = np.arange(0.1,1).reshape(10,10)
-print(lista)
+import pandas as pd
+np.random.seed(101)
+df = pd.DataFrame(np.random.randn(5,4),index='A B C D E'.split(),columns='W X Y Z'.split())
+print(df)
+print('--'*40)
+print(df.loc[['C','D'],['X','Y']])
+print(df.iloc[2:4,1:3])
